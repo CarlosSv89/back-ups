@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- gaspar.centro.distribucion tree view -->
+        <record id="gaspar_centro_distribucion_view_tree" model="ir.ui.view">
+            <field name="name">gaspar.centro.distribucion.view.tree</field>
+            <field name="model">gaspar.centro.distribucion</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="guid_gaspar"/>
+                    <field name="code"/>
+                    <field name="center_key"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- gaspar.centro.distribucion action window -->
+        <record id="gaspar_centro_distribucion_action" model="ir.actions.act_window">
+            <field name="name">Gaspar distribution center</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gaspar.centro.distribucion</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Centros de Distribución
+                </p><p>
+                    Agregar un nuevo elemento 
+                </p>
+            </field>
+        </record>
+
+        
+    </data>
+</odoo>

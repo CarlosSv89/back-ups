@@ -1,0 +1,98 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <!-- Catalogo views -->
+    <record model="ir.ui.view" id="catalogo_variables_list_view">
+      <field name="name">catalogo.variables.list.view</field>
+      <field name="model">catalogo.variables</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nivel"/>
+          <field name="padre_id"/>
+          <field name="numero"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="catalogo_variables_form_view" model="ir.ui.view">
+      <field name="name">catalogo.variables.form.view</field>
+      <field name="model">catalogo.variables</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="nivel"/>
+              <field name="padre_id"/>
+              <field name="numero"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- Report view -->
+    <record model="ir.ui.view" id="catalogo_variables_list_view">
+      <field name="name">catalogo.reportes.list.view</field>
+      <field name="model">catalogo.reportes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="relacion_ids"/>
+          <field name="enero"/>
+          <field name="febrero"/>
+          <field name="marzo"/>
+        </tree>
+      </field>
+    </record>
+
+     <record model="ir.ui.view" id="reporte_variables_list_view">
+      <field name="name">catalogo.reportes.list.view</field>
+      <field name="model">catalogo.reportes</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+              <group>
+                <field name="fecha_filtro"/>
+              </group>
+              <group>
+                <field name="relacion_ids" force_save='1' readonly='1'>
+                  <tree delete='false'>
+                    <field name="name" />
+                    <field name="nivel" />
+                    <field name="padre_id" />
+                    <field name="numero" />
+                  </tree>
+                </field>
+                <field name="enero" />
+                <field name="febrero" />
+                <field name="marzo" />
+              </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions -->
+    <record model="ir.actions.act_window" id="catalogo_variables_action_window">
+      <field name="name">Catalogo de variables</field>
+      <field name="res_model">catalogo.variables</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="catalogo_reporte_action_window">
+      <field name="name">Reporte de variables</field>
+      <field name="res_model">catalogo.reportes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Catalogo de variables" id="catalogo_variables_menu" action='catalogo_variables_action_window'/>
+
+    <menuitem id="reporte_variables_menu" name="Reporte" action="catalogo_reporte_action_window" parent="catalogo_variables_menu"/>
+
+  </data>
+</odoo>

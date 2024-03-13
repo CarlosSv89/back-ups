@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- res.partner inherit form view -->
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.inherit.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- Add your xpath here -->
+                <xpath expr="//notebook" position="inside">
+                    <!-- Add your fields here -->
+                    <page string="Gaspares">
+                        <div class="oe_title">
+                            <h1>
+                                <field name="id_cliente_completo" readonly="1" force_save="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="id_cliente_gaspar"/>
+                            <field name="id_cliente"/>
+                            <field name="conciciones_pago_id"/>
+                            <field name="scheme"/>
+                            <field name="radio"/>
+                            <field name="capacity"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>        
+
+        <record id="action_sync_cliente_gaspar" model="ir.actions.server">
+            <field name="name">G4S: Sincronizar cliente</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <!-- <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]"/> -->
+            <field name="binding_model_id" ref="base.model_res_partner" />
+            <field name="state">code</field>
+            <field name="code">records.save_to_gaspar()</field>
+        </record>
+    </data>
+</odoo>

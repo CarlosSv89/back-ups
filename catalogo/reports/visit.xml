@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <!-- <report id='reporte_catalogo_reporte' model='ir.action.report'>
+            <field name="name">Reporte de variables</field>
+            <field name='model'>catalogo.reportes</field>
+            <field name="report_type">xlxs</field>
+            <field name="report_name">Reporte de variables</field>
+            <field name="binding_model_id" ref='model_reporte_variables'/>
+            <field name="binding_type">report</field>
+        </report> -->
+    </data>
+    
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- res.country inherit form view -->
+        <record id="view_country_form" model="ir.ui.view">
+            <field name="name">res.country.inherit.view.form</field>
+            <field name="model">res.country</field>
+            <field name="inherit_id" ref="base.view_country_form"/>
+            <field name="arch" type="xml">
+                <!-- Add your xpath here -->
+                <xpath expr="//field[@name='I10n_mx_edi_code']" position="after">
+                    <!-- Add your fields here -->
+                    <field name="gaspar_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- res.country.state inherit tree view -->
+        <record id="view_country_state_tree" model="ir.ui.view">
+            <field name="name">res.country.state.inherit.view.tree</field>
+            <field name="model">res.country.state</field>
+            <field name="inherit_id" ref="base.view_country_state_tree"/>
+            <field name="arch" type="xml">
+                <!-- Add your xpath here -->
+                <xpath expr="//field[@name='country_id']" position="after">
+                    <!-- Add your fields here -->
+                    <field name="gaspar_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- res.city inherit tree view -->
+        <record id="view_city_tree" model="ir.ui.view">
+            <field name="name">res.city.inherit.view.tree</field>
+            <field name="model">res.city</field>
+            <field name="inherit_id" ref="base_address_city.view_city_tree"/>
+            <field name="arch" type="xml">
+                <!-- Add your xpath here -->
+                <xpath expr="//field[@name='state_id']" position="after">
+                    <!-- Add your fields here -->
+                    <field name="gaspar_id"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

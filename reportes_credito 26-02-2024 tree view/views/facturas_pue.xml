@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data>
+    <record id="facturas_pue_view_tree" model="ir.ui.view">
+      <field name="name">facturas.pue.view.tree</field>
+      <field name="model">account.move</field>
+      <field name="arch" type="xml">
+        <tree create="false" delete="false">
+          <field name="name" readonly="1" force_save="1" decoration-bf="1" />
+          <field name="l10n_mx_edi_cfdi_uuid" readonly="1" force_save="1" />
+          <field name="x_studio_cliente" readonly="1" force_save="1" />
+          <field name="type_name" readonly="1" force_save="1" />
+          <field name="l10n_mx_edi_payment_policy" readonly="1" force_save="1" />
+          <field name="canal_distribucion" readonly="1" force_save="1" />
+          <field name="invoice_partner_display_name" readonly="1" force_save="1" />
+          <field name="invoice_payment_term_id" readonly="1" force_save="1" />
+          <field name="invoice_date" readonly="1" force_save="1" />
+          <field name="invoice_date_due" readonly="1" force_save="1" />
+          <field name="x_studio_tipo" readonly="1" force_save="1" />
+          <field name="activity_ids" readonly="1" force_save="1" widget="list_activity"
+            optional="show" />
+          <field name="company_id" readonly="1" force_save="1" />
+          <field name="amount_untaxed_signed" readonly="1" force_save="1" />
+          <field name="amount_total_signed" readonly="1" force_save="1" />
+          <field name="state" readonly="1" force_save="1" widget="badge"
+            decoration-success="state == 'posted'" decoration-info="state == 'draft'"
+            optional="show" />
+          <field name="payment_state" readonly="1" force_save="1" widget="badge"
+            decoration-danger="payment_state == 'not_paid'"
+            decoration-warning="payment_state in ('partial', 'in_payment')"
+            decoration-success="payment_state in ('paid', 'reversed')" />
+          <field name="edi_state" readonly="1" force_save="1" />
+          <field name="id" readonly="1" force_save="1" />
+        </tree>
+      </field>
+    </record>
+
+    <record id="rep_facturas_pue_action" model="ir.actions.act_window">
+      <field name="name">Reporte de facturas PUE</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">account.move</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="facturas_pue_view_tree"></field>
+      <field name="binding_model_id" ref="account.model_account_move"></field>
+      <field name="domain">[('move_type', '=', 'out_invoice'),('l10n_mx_edi_payment_policy', '=', 'PUE'),('amount_residual_signed', '!=',0),('edi_state','in',['to_send','to_cancel']),('x_studio_tipo', '=', 'Crédito')]</field>
+    </record>
+  </data>
+</odoo>

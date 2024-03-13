@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- gaspar.condiciones.pago tree view -->
+        <record id="gaspar_condiciones_pago_view_tree" model="ir.ui.view">
+            <field name="name">gaspar.condiciones.pago.view.tree</field>
+            <field name="model">gaspar.condiciones.pago</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="gaspar_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- gaspar.condiciones.pago action window -->
+        <record id="gaspar_condiciones_pago_action" model="ir.actions.act_window">
+            <field name="name">Gaspar payment conditions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gaspar.condiciones.pago</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Condiciones de pago G4S
+                </p><p>
+                    Agregar un nuevo elemento 
+                </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="condiciones_pago_menu_act" name="Condiciones de pago" 
+        parent="contacts.res_partner_menu_config" action="gaspar_condiciones_pago_action" 
+        sequence="10"/>
+    </data>
+</odoo>

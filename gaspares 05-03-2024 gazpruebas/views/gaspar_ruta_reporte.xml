@@ -1,0 +1,78 @@
+<odoo>
+    <data>
+
+        <!-- gaspar.precios tree view -->
+        <record id="gaspar_reporte_ruta_view_tree" model="ir.ui.view">
+            <field name="name">Vista de árbol de reporte ruta gaspar</field>
+            <field name="model">gaspar.rep.ruta</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="pos_config_id"/>
+                    <field name="fecha_inicial"/>
+                    <field name="fecha_fin"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- gaspar.precios action window -->
+        <record id="gaspar_reporte_ruta_action" model="ir.actions.act_window">
+            <field name="name">Reporte ruta gaspar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gaspar.rep.ruta</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Reporte ruta gaspar
+                </p>
+                <p>
+                    Presionarel botón <b>Crear</b> para agregar un nuevo reporte.
+                </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+
+        <record id="gaspar_reporte_ruta_view_from" model="ir.ui.view">
+            <field name="name">Vista de formulario de reporte ruta gaspar</field>
+            <field name="model">gaspar.rep.ruta</field>
+            <field name="arch" type="xml">
+                <form string="form">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" force_save="1" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <!-- Add your fields here -->
+                            <field name="pos_config_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                            <field name="fecha_inicial"/>
+                            <field name="fecha_fin"/>
+                        </group>
+                        <notebook>
+                            <page string="Ruta" name="ruta">
+                                <field name="linea_ids" force_save="1">
+                                    <tree delete="false" create="false" edit="false" editable="false">
+                                        <field name="id_equipo" force_save="1" readonly="1"/>
+                                        <field name="tag" force_save="1" readonly="1"/>
+                                        <field name="consecutivo" force_save="1" readonly="1"/>
+                                        <field name="fecha" force_save="1" readonly="1"/>
+                                        <field name="longitud" force_save="1" readonly="1"/>
+                                        <field name="latitud" force_save="1" readonly="1"/>
+                                        <field name="radio_error" force_save="1" readonly="1"/>
+                                        <field name="curso" force_save="1" readonly="1"/>
+                                        <field name="velocidad" force_save="1" readonly="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        <!-- <page name="mas_info" string="Más información">
+                        </page> -->
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

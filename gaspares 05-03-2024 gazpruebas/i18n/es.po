@@ -1,0 +1,366 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gaspares
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-08 19:25+0000\n"
+"PO-Revision-Date: 2022-10-08 19:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: gaspares
+#: model_terms:ir.ui.view,arch_db:gaspares.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Gaspar integration API</span>"
+msgstr "<span class=\"o_form_label\">API de integración gaspar</span>"
+
+#. module: gaspares
+#: model_terms:ir.actions.act_window,help:gaspares.gaspar_centro_distribucion_action
+msgid "Add a new distribution center."
+msgstr "Agregar un nuevo centro de distribución"
+
+#. module: gaspares
+#: model_terms:ir.actions.act_window,help:gaspares.gaspar_condiciones_pago_action
+msgid "Add payment conditions"
+msgstr "Agregar condición de pago"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_res_company__id_planta
+#: model:ir.model.fields,field_description:gaspares.field_res_partner__id_planta
+#: model:ir.model.fields,field_description:gaspares.field_res_users__id_planta
+#: model:ir.model.fields,field_description:gaspares.field_rutas_clientes__id_planta
+msgid "Branch ID"
+msgstr ""
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_res_partner__capacity
+#: model:ir.model.fields,field_description:gaspares.field_res_users__capacity
+msgid "Capacity"
+msgstr "Capacidad"
+
+#. module: gaspares
+#: code:addons/gaspares/models/res.py:0
+#, python-format
+msgid "Capacity cannot be less than 300"
+msgstr "Capacidad no puede ser menor a 300"
+
+#. module: gaspares
+#: code:addons/gaspares/models/res.py:0
+#, python-format
+msgid "Capacity field is required"
+msgstr "El campo Caacidad es requerdio"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_centro_distribucion__center_key
+msgid "Center key"
+msgstr "Llave"
+
+#. module: gaspares
+#: model:ir.ui.menu,name:gaspares.gaspares_centros_distribucion
+msgid "Centros de distribución"
+msgstr ""
+
+#. module: gaspares
+#: model_terms:ir.actions.act_window,help:gaspares.gaspar_precios_action
+msgid "Click on the <b>Create</b> button to create a new gaspar price."
+msgstr "Presiona el botón <b>Crear</b> para crear un nuevo precio" 
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_centro_distribucion__code
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_condiciones_pago__gaspar_id
+msgid "Code"
+msgstr "Codigo"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_res_partner__id_cliente_completo
+#: model:ir.model.fields,field_description:gaspares.field_res_users__id_cliente_completo
+msgid "Combined ID"
+msgstr "ID combinado"
+
+#. module: gaspares
+#: model:ir.model,name:gaspares.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_centro_distribucion__company_id
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_condiciones_pago__company_id
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_precios__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: gaspares
+#: model:ir.ui.menu,name:gaspares.condiciones_pago_menu_act
+msgid "Condiciones de pago"
+msgstr ""
+
+#. module: gaspares
+#: model:ir.model,name:gaspares.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_centro_distribucion__create_uid
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_condiciones_pago__create_uid
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_precios__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_centro_distribucion__create_date
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_condiciones_pago__create_date
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_precios__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_res_partner__id_cliente
+#: model:ir.model.fields,field_description:gaspares.field_res_users__id_cliente
+msgid "Customer ID"
+msgstr "ID cliente"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_centro_distribucion__display_name
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_condiciones_pago__display_name
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_precios__display_name
+#: model:ir.model.fields,field_description:gaspares.field_res_company__display_name
+#: model:ir.model.fields,field_description:gaspares.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:gaspares.field_res_partner__display_name
+#: model:ir.model.fields,field_description:gaspares.field_rutas_clientes__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: gaspares
+#: model:ir.model,name:gaspares.model_gaspar_centro_distribucion
+msgid "Distribution center"
+msgstr "Centro de distribución"
+
+#. module: gaspares
+#: code:addons/gaspares/models/res.py:0 code:addons/gaspares/models/res.py:0
+#, python-format
+msgid "Error saving to gaspar: %s"
+msgstr "Error guardando en gaspar: %s"
+
+#. module: gaspares
+#: model_terms:ir.ui.view,arch_db:gaspares.res_config_settings_view_form
+msgid "Expected format: http://ip_address:port"
+msgstr "Formato esperado: http://ip_address:port"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_centro_distribucion__guid_gaspar
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_precios__guid_gaspar
+#: model:ir.model.fields,field_description:gaspares.field_res_partner__id_cliente_gaspar
+#: model:ir.model.fields,field_description:gaspares.field_res_users__id_cliente_gaspar
+msgid "Gaspar ID"
+msgstr "ID gaspar"
+
+#. module: gaspares
+#: model:ir.model.constraint,message:gaspares.constraint_gaspar_precios_gaspar_id_unique
+msgid "Gaspar ID field must be unique."
+msgstr "ID gaspar debe ser único"
+
+#. module: gaspares
+#: code:addons/gaspares/models/gaspar.py:0
+#: code:addons/gaspares/models/gaspar.py:0
+#: code:addons/gaspares/models/gaspar_precios.py:0
+#: code:addons/gaspares/models/gaspar_precios.py:0
+#, python-format
+msgid "Gaspar ID is invalid."
+msgstr "ID gaspar es inválido"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_res_company__gaspar_integracion_api
+#: model:ir.model.fields,field_description:gaspares.field_res_config_settings__gaspar_integracion_api
+msgid "Gaspar Integration API"
+msgstr "API de integración gaspar"
+
+#. module: gaspares
+#: model:ir.actions.act_window,name:gaspares.gaspar_centro_distribucion_action
+msgid "Gaspar distribution center"
+msgstr "Centro de distribución gaspar"
+
+#. module: gaspares
+#: model:ir.actions.act_window,name:gaspares.gaspar_condiciones_pago_action
+#: model:ir.model,name:gaspares.model_gaspar_condiciones_pago
+#: model:ir.model.fields,field_description:gaspares.field_res_partner__conciciones_pago_id
+#: model:ir.model.fields,field_description:gaspares.field_res_users__conciciones_pago_id
+#: model_terms:ir.actions.act_window,help:gaspares.gaspar_condiciones_pago_action
+msgid "Gaspar payment conditions"
+msgstr "Condiciones de pago de gaspares"
+
+#. module: gaspares
+#: model:ir.actions.act_window,name:gaspares.gaspar_precios_action
+#: model:ir.model,name:gaspares.model_gaspar_precios
+#: model_terms:ir.actions.act_window,help:gaspares.gaspar_precios_action
+msgid "Gaspar prices"
+msgstr "Precios gaspar"
+
+#. module: gaspares
+#: model:ir.ui.menu,name:gaspares.gaspares_menu_root
+#: model_terms:ir.ui.view,arch_db:gaspares.view_partner_form
+msgid "Gaspares"
+msgstr ""
+
+#. module: gaspares
+#: model:ir.actions.act_window,name:gaspares.action_gaspares_settings
+msgid "Gaspares Settigns"
+msgstr "Configuración de gaspar"
+
+#. module: gaspares
+#: model_terms:ir.ui.view,arch_db:gaspares.res_config_settings_view_form
+msgid "Gaspares settings"
+msgstr "Configuración de gaspar"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_centro_distribucion__id
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_condiciones_pago__id
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_precios__id
+#: model:ir.model.fields,field_description:gaspares.field_res_company__id
+#: model:ir.model.fields,field_description:gaspares.field_res_config_settings__id
+#: model:ir.model.fields,field_description:gaspares.field_res_partner__id
+#: model:ir.model.fields,field_description:gaspares.field_rutas_clientes__id
+msgid "ID"
+msgstr ""
+
+#. module: gaspares
+#: model:ir.model.constraint,message:gaspares.constraint_res_partner_id_cliente_unique
+msgid "ID Cliente field must be unique."
+msgstr "El campo ID cliente debe ser único"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_centro_distribucion____last_update
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_condiciones_pago____last_update
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_precios____last_update
+#: model:ir.model.fields,field_description:gaspares.field_res_company____last_update
+#: model:ir.model.fields,field_description:gaspares.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:gaspares.field_res_partner____last_update
+#: model:ir.model.fields,field_description:gaspares.field_rutas_clientes____last_update
+msgid "Last Modified on"
+msgstr "Última actualización"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_centro_distribucion__write_uid
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_condiciones_pago__write_uid
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_precios__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_centro_distribucion__write_date
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_condiciones_pago__write_date
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_precios__write_date
+msgid "Last Updated on"
+msgstr "Última actualización"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_centro_distribucion__name
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_condiciones_pago__name
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_precios__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: gaspares
+#: code:addons/gaspares/models/gaspar.py:0
+#: code:addons/gaspares/models/gaspar_precios.py:0
+#, python-format
+msgid "No es posible guardar precio en gaspar. <br/>Error: %s"
+msgstr ""
+
+#. module: gaspares
+#: code:addons/gaspares/models/ruta_cliente.py:0
+#, python-format
+msgid "No es posible guardar ruta en gaspar. <br/>Error: %s"
+msgstr ""
+
+#. module: gaspares
+#: model:ir.ui.menu,name:gaspares.gaspares_precios
+msgid "Precios"
+msgstr ""
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_precios__precio
+msgid "Price"
+msgstr "Precio"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_res_partner__radio
+#: model:ir.model.fields,field_description:gaspares.field_res_users__radio
+msgid "Radio"
+msgstr ""
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_precios__region_zone
+msgid "Region zone"
+msgstr "Zona"
+
+#. module: gaspares
+#: model:ir.model,name:gaspares.model_rutas_clientes
+msgid "Rutas de cliente"
+msgstr ""
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_res_partner__scheme
+#: model:ir.model.fields,field_description:gaspares.field_res_users__scheme
+msgid "Scheme"
+msgstr "Esquema"
+
+#. module: gaspares
+#: code:addons/gaspares/models/res.py:0
+#, python-format
+msgid "Scheme field is required"
+msgstr "El campo de esquema es requerido"
+
+#. module: gaspares
+#: code:addons/gaspares/models/res.py:0
+#, python-format
+msgid "Scheme must be between 1 and 100"
+msgstr "Esquema debe tener un valor entre 1 y 100"
+
+#. module: gaspares
+#: model:ir.actions.server,name:gaspares.action_sync_cliente_gaspar
+msgid "Sync Gaspar customer"
+msgstr "Sincronizar cliente gaspar"
+
+#. module: gaspares
+#: model:ir.actions.server,name:gaspares.action_sync_precio_gaspar
+msgid "Sync Gaspar prices"
+msgstr "Sincronizar precio gaspar"
+
+#. module: gaspares
+#: model:ir.actions.server,name:gaspares.action_sync_ruta_gaspar
+msgid "Sync Gaspar route"
+msgstr "Sincronizar ruta gaspar"
+
+#. module: gaspares
+#: model:ir.model.fields,field_description:gaspares.field_gaspar_precios__tax_rate
+msgid "Tax rate"
+msgstr "IVA"
+
+#. module: gaspares
+#: code:addons/gaspares/models/ruta_cliente.py:0
+#, python-format
+msgid "The branch ID is required. Configure this value at the company form."
+msgstr "El id de la planta es requerido. COnfigura este valor en los datos de la compañía."
+
+#. module: gaspares
+#: code:addons/gaspares/models/ruta_cliente.py:0
+#, python-format
+msgid "There are not distribution centers, create one to continue."
+msgstr "No hay centros de distribución, intente mas tarde."
+
+#. module: gaspares
+#: code:addons/gaspares/models/res.py:0
+#, python-format
+msgid "Unable to save customer to gaspar, try again later"
+msgstr "No es posible guardar cliente en gaspar, intente mas tarde."
+
+#. module: gaspares
+#: model:ir.model,name:gaspares.model_res_partner
+msgid "partner"
+msgstr ""

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- Gaspares clientes view -->
+    <record id="gaspar_clientes_tree_view" model="ir.ui.view">
+      <field name="name">gaspar.clientes.tree.view</field>
+      <field name="model">res.partner</field>
+      <field name="arch" type="xml">
+        <tree edit="false" create="false" delete="false" >
+          <field name="name" readonly="1" force_save="1" />
+          <field name="id_cliente" readonly="1" force_save="1" />
+          <field name="id" string="ID ZAE" readonly="1" force_save="1" class="text-center" />
+          <field name="contact_address_complete" readonly="1" force_save="1" />
+          <field name="scheme" readonly="1" force_save="1" class="text-center" />
+          <field name="x_studio_categoria_cliente" readonly="1" force_save="1" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions -->
+    <record model="ir.actions.act_window" id="gaspar_clientes_action">
+      <field name="name">Clientes</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="gaspar_clientes_tree_view" />
+      <field name="binding_model_id" ref="base.model_res_partner" ></field>
+      <field name="domain">[('x_studio_categoria_cliente', 'not in', ['Usuario', 'Empresa', 'Proveedor', 'Otros'])]</field>
+      <field name="context">{}</field>
+    </record>
+  </data>
+</odoo>

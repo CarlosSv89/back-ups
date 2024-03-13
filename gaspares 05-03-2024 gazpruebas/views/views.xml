@@ -1,0 +1,33 @@
+<odoo>
+  <data>
+    <menuitem id="gaspares_menu_root" name="Gaspares" sequence="10" groups="gaspares.group_g4s" web_icon="gaspares,static/description/gaspar.png">
+
+      <menuitem id="gaspares_centros_distribucion" name="Centros de distribución" 
+      sequence="10" action="gaspar_centro_distribucion_action"/>
+
+      <menuitem id="gaspares_precios" name="Precios" sequence="20" action="gaspar_precios_action"/>
+
+      <menuitem id="condiciones_pago_menu_act" name="Condiciones de pago" 
+        action="gaspar_condiciones_pago_action" sequence="30"/>
+
+      <menuitem id="ruta_clientes_menu_act" name="Rutas de clientes" 
+        action="pos_assets.action_clientes_rutas_view" sequence="30"/>
+
+      <menuitem id="gasper_medidor_menu_act" name="Medidores" 
+        action="gaspar_medidior_action" sequence="40"/>
+
+      <menuitem id="gasper_servicios_menu_act" name="Reporte de servicios"
+                action="gaspar_reporte_servicios_action" sequence="50"/>
+      
+      <menuitem id="gaspar_clientes_menu_act" name="Clientes"
+        action="gaspar_clientes_action" sequence="60" />
+
+      <menuitem id="gasper_eventos_menu_act" name="Reporte de eventos"
+                action="gaspar_reporte_eventos_action" sequence="51"/>
+
+      <menuitem id="gasper_ruta_menu_act" name="Reporte de ruta"
+                action="gaspar_reporte_ruta_action" sequence="52"/>
+
+    </menuitem>
+  </data>
+</odoo>

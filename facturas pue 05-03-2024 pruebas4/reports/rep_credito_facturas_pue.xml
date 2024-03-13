@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="reporte_facturas_pue" model="ir.actions.report">
+      <field name="name">Facturas PUE</field>
+      <field name="model">rep_credito.facturas_pue</field>
+      <field name="report_type">xlsx</field>
+      <field name="report_name">rep_credito.facturas_pue.report</field>
+      <field name="report_file">Reporte de facturas PUE</field>
+      <field name="binding_model_id" ref="model_rep_credito_facturas_pue"/>
+      <field name="binding_type">report</field>
+    </record>
+  </data>
+</odoo>

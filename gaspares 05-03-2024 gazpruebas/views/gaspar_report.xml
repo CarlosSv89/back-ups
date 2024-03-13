@@ -1,0 +1,96 @@
+<odoo>
+    <data>
+
+        <!-- gaspar.precios tree view -->
+        <record id="gaspar_reporte_servicios_view_tree" model="ir.ui.view">
+            <field name="name">Vista de árbol de reporte servicios gaspar</field>
+            <field name="model">gaspar.rep.servicios</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="pos_config_id"/>
+                    <field name="fecha_inicial"/>
+                    <field name="fecha_fin"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- gaspar.precios action window -->
+        <record id="gaspar_reporte_servicios_action" model="ir.actions.act_window">
+            <field name="name">Reporte servicios gaspar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gaspar.rep.servicios</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Reporte servicios gaspar
+                </p>
+                <p>
+                    Presionarel botón <b>Crear</b> para agregar un nuevo reporte.
+                </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+
+        <record id="gaspar_reporte_servicios_view_from" model="ir.ui.view">
+            <field name="name">Vista de formulario de reporte servicios gaspar</field>
+            <field name="model">gaspar.rep.servicios</field>
+            <field name="arch" type="xml">
+                <form string="form">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" force_save="1" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <!-- Add your fields here -->
+                            <field name="all_pos"/>
+                            <field name="pos_config_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible': [('all_pos', '=', True)]}"/>
+                            <field name="fecha_inicial"/>
+                            <field name="fecha_fin"/>
+                        </group>
+                        <notebook>
+                            <page string="Servicios" name="servicios">
+                                <field name="linea_ids" force_save="1">
+                                    <tree delete="false" create="false" edit="false" editable="false">
+                                        <field name="id_venta" force_save="1" readonly="1"/>
+                                        <field name="id_medidor" force_save="1" readonly="1"/>
+                                        <field name="tag" force_save="1" readonly="1"/>
+                                        <field name="id_cliente" force_save="1" readonly="1"/>
+                                        <field name="nombre_cliente" force_save="1" readonly="1"/>
+                                        <field name="id_negocio" force_save="1" readonly="1"/>
+                                        <field name="folio" force_save="1" readonly="1"/>
+                                        <field name="fecha_inicio" force_save="1" readonly="1"/>
+                                        <field name="fecha_final" force_save="1" readonly="1"/>
+                                        <field name="forma_pago" force_save="1" readonly="1"/>
+                                        <field name="precio" force_save="1" readonly="1"/>
+                                        <field name="volumen" force_save="1" readonly="1"/>
+                                        <field name="masa" force_save="1" readonly="1"/>
+                                        <field name="descuento" force_save="1" readonly="1"/>
+                                        <field name="importe" force_save="1" readonly="1"/>
+                                        <field name="alarma" force_save="1" readonly="1"/>
+                                        <field name="condiciones" force_save="1" readonly="1"/>
+                                        <field name="sector" force_save="1" readonly="1"/>
+                                        <field name="densidad" force_save="1" readonly="1"/>
+                                        <field name="temperatura" force_save="1" readonly="1"/>
+                                        <field name="longitud" force_save="1" readonly="1"/>
+                                        <field name="latitud" force_save="1" readonly="1"/>
+                                        <field name="radio" force_save="1" readonly="1"/>
+                                        <field name="num_equipo" force_save="1" readonly="1"/>
+                                        <field name="totalizador" force_save="1" readonly="1"/>
+                                        <field name="totalizador_masa" force_save="1" readonly="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        <!-- <page name="mas_info" string="Más información">
+                        </page> -->
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

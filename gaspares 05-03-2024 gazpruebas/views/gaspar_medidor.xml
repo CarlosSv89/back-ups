@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- gaspar.medidor tree view -->
+        <record id="gaspar_medidor_view_tree" model="ir.ui.view">
+            <field name="name">Medidor Gaspar Lista</field>
+            <field name="model">gaspar.medidor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="idGaspar"/>
+                    <field name="application_type"/>
+                    <!-- <field name="g4s_active"/> -->
+                    <field name="equipment_number"/>
+                    <field name="status"/>
+                    <field name="link_key"/>
+                    <field name="comm_channel"/>
+                    <field name="cpu_serial_number"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- gaspar.medidor form view -->
+        <record id="gaspar_medidor_view_form" model="ir.ui.view">
+            <field name="name">Medidor Gaspar Forma</field>
+            <field name="model">gaspar.medidor</field>
+            <field name="arch" type="xml">
+                <form string="form">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Tag del medidor" required="1"/>
+                            </h1>
+                        </div> 
+                        <group>
+                            <!-- Add your fields here -->
+                            <field name="idGaspar"/>
+                            <field name="application_type"/>
+                            <field name="g4s_active"/>
+                            <field name="equipment_number" required="1"/>
+                        </group>
+                        <group>
+                            <field name="status"/>
+                            <field name="link_key"/>
+                            <field name="comm_channel"/>
+                            <field name="cpu_serial_number"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- gaspar.medidor action window -->
+        <record id="gaspar_medidior_action" model="ir.actions.act_window">
+            <field name="name">Medidores Gaspar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gaspar.medidor</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Medidores Gaspar
+                </p><p>
+                    Presionar el botón <b>Crear</b> para crear un nuevo medidor gaspar.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="condiciones_pago_menu_act" name="Condiciones de pago" 
+        parent="contacts.res_partner_menu_config" action="gaspar_condiciones_pago_action" 
+        sequence="40"/>
+
+        <record id="action_obtener_medidor_gaspar" model="ir.actions.server">
+            <field name="name">G4S: Obtener Medidor</field>
+            <field name="model_id" ref="gaspares.model_gaspar_medidor"/>
+            <!-- <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]"/> -->
+            <field name="binding_model_id" ref="gaspares.model_gaspar_medidor" />
+            <field name="state">code</field>
+            <field name="code">records.obtener_info_gaspar()</field>
+        </record>
+    </data>
+</odoo>

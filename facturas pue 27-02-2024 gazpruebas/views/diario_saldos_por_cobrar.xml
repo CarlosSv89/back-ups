@@ -1,0 +1,121 @@
+<odoo>
+    <data>
+    <!-- rep.diario.cyc action window -->
+    <record id="rep_diario_saldos_x_cobrar_action" model="ir.actions.act_window">
+        <field name="name">Diario de saldos por cobrar</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">rep.diario.saldos.xcobrar</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Diario de saldos por cobrar mensual</p>
+        <p>Presiona "Crear" para agregar un nuevo diario</p>
+        </field>
+    </record>
+
+    <!-- rep.diario.cyc tree view -->
+    <record id="rep_diario_saldos_x_cobrar_view_tree" model="ir.ui.view">
+        <field name="name">Diario de saldos por cobrar mensual</field>
+        <field name="model">rep.diario.saldos.xcobrar</field>
+        <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="categoria_rep"/>
+            <field name="fecha_inicial"/>
+            <field name="fecha_final"/>
+            <field name="fecha_report" />
+        </tree>
+        </field>
+    </record>
+
+    <!-- rep.diario.cyc form view -->
+    <record id="rep_diario_saldos_x_cobrar_view_form" model="ir.ui.view">
+        <field name="name">Diario de saldos por cobrar mensual</field>
+        <field name="model">rep.diario.saldos.xcobrar</field>
+        <field name="arch" type="xml">
+        <form string="form">
+            <sheet>
+            <div class="oe_title">
+                <h1>
+                <field name="name" readonly="1" />
+                </h1>
+            </div>
+            <group name="group_top">
+                <group name="group_right">
+                    <field name="categoria_rep"/>
+                    <field name="fecha_inicial"/>
+                    <field name="fecha_final"/>
+                </group>
+                <group name="group_left">
+                    <field name="fecha_report" force_save="1" attrs="{'readonly':[('can_edit_report', '=', False)]}"/>
+                    <field name="company_name" force_save="1" attrs="{'readonly':[('can_edit_report', '=', False)]}"/>
+                    <field name="can_edit_report" invisible="1"/>
+                </group>
+            </group>
+            <notebook>
+                <page name="saldos_cobrar" string="Saldos por cobrar">
+                    <field name="linea_diario_rpt" force_save="1">
+                        <tree delete="false" create="false" edit="false" editable="false">
+                            <field name="concepto" readonly="1" force_save="1"/>
+                            <field name="enero" sum="enero" decoration-info="enero &gt; 0.00" decoration-danger="enero &lt; 0.00" readonly="1" force_save="1"/>
+                            <field name="febrero" sum="febrero" decoration-info="febrero &gt; 0.00" decoration-danger="febrero &lt; 0.00" readonly="1" force_save="1"/>
+                            <field name="marzo" sum="marzo" decoration-info="marzo &gt; 0.00" decoration-danger="marzo &lt; 0.00" readonly="1" force_save="1"/>
+                            <field name="abril" sum="abril" decoration-info="abril &gt; 0.00" decoration-danger="abril &lt; 0.00" readonly="1" force_save="1"/>
+                            <field name="mayo" sum="mayo" decoration-info="mayo &gt; 0.00" decoration-danger="mayo &lt; 0.00" readonly="1" force_save="1"/>
+                            <field name="junio" sum="junio" decoration-info="junio &gt; 0.00" decoration-danger="junio &lt; 0.00" readonly="1" force_save="1"/>
+                            <field name="julio" sum="julio" decoration-info="julio &gt; 0.00" decoration-danger="julio &lt; 0.00" readonly="1" force_save="1"/>
+                            <field name="agosto" sum="agosto" decoration-info="agosto &gt; 0.00" decoration-danger="agosto &lt; 0.00" readonly="1" force_save="1"/>
+                            <field name="septiembre" sum="septiembre" decoration-info="septiembre &gt; 0.00" decoration-danger="septiembre &lt; 0.00" readonly="1" force_save="1"/>
+                            <field name="octubre" sum="octubre" decoration-info="octubre &gt; 0.00" decoration-danger="octubre &lt; 0.00" readonly="1" force_save="1"/>
+                            <field name="noviembre" sum="noviembre" decoration-info="noviembre &gt; 0.00" decoration-danger="noviembre &lt; 0.00" readonly="1" force_save="1"/>
+                            <field name="diciembre" sum="diciembre" decoration-info="diciembre &gt; 0.00" decoration-danger="diciembre &lt; 0.00" readonly="1" force_save="1"/>
+                        </tree>
+                    </field>
+                </page>
+                <page name="desglose_odenes" string="Desglose ordenes">
+                    <field name="linea_desglose_ordenes" force_save="1" readonly="1"  default_order="partner_id desc">
+                        <tree delete="false" create="false" edit="false" editable="false">
+                            <field name="concepto" readonly="1" force_save="1"/>
+                            <field name="date_order" readonly="1" force_save="1"/>
+                            <field name="date_order_due" readonly="1" force_save="1"/>
+                            <field name="order_folio" readonly="1" force_save="1"/>
+                            <field name="partner_id" readonly="1" force_save="1"/>
+                            <field name="amount_total" readonly="1" force_save="1" sum="amount_total"/>
+                        </tree>
+                    </field>
+                </page>
+                <page name="desglose_facturas" string="Desglose facturas">
+                    <field name="linea_desglose_facturas" force_save="1" readonly="1" >
+                        <tree delete="false" create="false" edit="false" editable="false">
+                            <field name="concepto" readonly="1" force_save="1"/>
+                            <field name="name" readonly="1" force_save="1"/>
+                            <field name="l10n_mx_edi_cfdi_uuid" readonly="1" force_save="1"/>
+                            <field name="invoice_partner_display_name" readonly="1" force_save="1"/>
+                            <field name="invoice_date" readonly="1" force_save="1"/>
+                            <field name="invoice_date_due" readonly="1" force_save="1"/>
+                            <field name="amount_total" readonly="1" force_save="1"/>
+                            <field name="amount_residual_signed" readonly="1" force_save="1" sum="amount_residual_signed"/>
+                            <field name="edi_state" readonly="1" force_save="1"/>
+                            <field name="payment_state" readonly="1" force_save="1"/>
+                            <field name="state" readonly="1" force_save="1"/>                        
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
+            </sheet>
+        </form>
+        </field>
+    </record>
+
+    <!-- account.payment inherit form view -->
+    <!-- <record id="view_account_payment_form" model="ir.ui.view">
+        <field name="name">account.payment.inherit.view.form</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+        <xpath expr="//field[@name='partner_bank_id']" position="after">
+            <field name="x_studio_tipo_de_pago"/>
+        </xpath>
+        </field>
+    </record> -->
+    </data>
+</odoo>

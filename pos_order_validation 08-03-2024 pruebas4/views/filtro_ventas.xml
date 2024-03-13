@@ -1,0 +1,85 @@
+<odoo>
+  <data>
+    <!-- Inherit filters view pos.order -->
+    <record id="pos_order_view_search_inherit" model="ir.ui.view">
+      <field name="name">pos.order.view.search.inherit</field>
+      <field name="model">pos.order</field>
+      <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+      <field name="arch" type="xml">
+        <xpath expr="//search" position="inside">
+          <!-- Current month filter -->
+          <filter string="Mes actual" name="current_month" domain="[('date_order', '&gt;=', datetime.datetime.combine(datetime.date(datetime.datetime.now().year, datetime.datetime.now().month, 2), datetime.time(0,0,0)).strftime('%Y/%m/%d %H:%M:%S')), ('date_order', '&lt;=', datetime.datetime.combine(datetime.date(datetime.datetime.now().year, datetime.datetime.now().month + 1, 1), datetime.time(0,0,0)).strftime('%Y/%m/%d %H:%M:%S'))]" />
+          
+          <!-- Clients in current month filter -->
+          <filter string="Clientes este mes" name="clients_current_month" domain="[('x_studio_fecha_creacion_cliente', '&gt;=', datetime.datetime.combine(datetime.date(datetime.datetime.now().year, datetime.datetime.now().month, 2), datetime.time(0,0,0)).strftime('%Y/%m/%d %H:%M:%S')), ('x_studio_fecha_creacion_cliente', '&lt;', datetime.datetime.combine(datetime.date(datetime.datetime.now().year, datetime.datetime.now().month + 1, 1), datetime.time(0,0,0)).strftime('%Y/%m/%d %H:%M:%S'))]" />
+          </xpath>
+      </field>
+    </record>
+
+    <!-- Inherit filters view pos.payment -->
+    <record id="pos_payment_view_search_inherit" model="ir.ui.view">
+      <field name="name">pos.payment.view.search.inherit</field>
+      <field name="model">pos.payment</field>
+      <field name="inherit_id" ref="point_of_sale.view_pos_payment_search"/>
+      <field name="arch" type="xml">
+        <xpath expr="//search" position="inside">
+          <!-- Current month filter -->
+          <filter string="Mes actual" name="current_month" domain="[('payment_date', '&gt;=', datetime.datetime.combine(datetime.date(datetime.datetime.now().year, datetime.datetime.now().month, 2), datetime.time(0,0,0)).strftime('%Y/%m/%d %H:%M:%S')), ('payment_date', '&lt;=', datetime.datetime.combine(datetime.date(datetime.datetime.now().year, datetime.datetime.now().month + 1, 1), datetime.time(0,0,0)).strftime('%Y/%m/%d %H:%M:%S'))]" />
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Inherit filters view pos_route_config.route_config_history -->
+    <record id="pos_route_config_route_config_history_view_search_inherit" model="ir.ui.view">
+      <field name="name">pos_route_config.route_config_history.view.search.inherit</field>
+      <field name="model">pos_route_config.route_config_history</field>
+      <field name="inherit_id" ref="studio_customization.default_search_view__13b4a852-fcee-40ac-8b47-da990e124292"/>
+      <field name="arch" type="xml">
+        <xpath expr="//search" position="inside">
+          <field name="modified_date" />
+          <!-- Current month filter -->
+          <filter string="Mes actual" name="current_month" domain="[('modified_date', '&gt;=', datetime.datetime.combine(datetime.date(datetime.datetime.now().year, datetime.datetime.now().month, 2), datetime.time(0,0,0)).strftime('%Y/%m/%d %H:%M:%S')), ('modified_date', '&lt;=', datetime.datetime.combine(datetime.date(datetime.datetime.now().year, datetime.datetime.now().month + 1, 1), datetime.time(0,0,0)).strftime('%Y/%m/%d %H:%M:%S'))]" />
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Inherit filters view account.payment -->
+    <record id="account_payment_view_search_inherit" model="ir.ui.view">
+      <field name="name">account.payment.view.search.inherit</field>
+      <field name="model">account.payment</field>
+      <field name="inherit_id" ref="account.view_account_payment_search"/>
+      <field name="arch" type="xml">
+        <xpath expr="//search" position="inside">
+          <!-- Current month filter -->
+          <filter string="Mes actual" name="current_month" domain="[('invoice_date', '&gt;=', datetime.date(datetime.datetime.now().year, datetime.datetime.now().month, 2).strftime('%Y/%m/%d')), ('invoice_date', '&lt;', datetime.date(datetime.datetime.now().year, datetime.datetime.now().month + 1, 1).strftime('%Y/%m/%d'))]" />
+        </xpath>
+      </field>
+    </record>
+
+    <!--Inherit filters view account.move -->
+    <record id="account_move_view_search_inherit" model="ir.ui.view">
+      <field name="name">account.move.view.search.inherit</field>
+      <field name="model">account.move</field>
+      <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+      <field name="arch" type="xml">
+        <xpath expr="//search" position="inside">
+          <!-- Current month filter -->
+          <filter string="Mes actual" name="current_month" domain="[('invoice_date', '&gt;=', datetime.date(datetime.datetime.now().year, datetime.datetime.now().month, 2).strftime('%Y/%m/%d')), ('invoice_date', '&lt;', datetime.date(datetime.datetime.now().year, datetime.datetime.now().month + 1, 1).strftime('%Y/%m/%d'))]" />
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Inherit filters view account.move.line -->
+    <record id="account_move_line_view_search_inherit" model="ir.ui.view">
+      <field name="name">account.move.line.view.search.inherit</field>
+      <field name="model">account.move.line</field>
+      <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+      <field name="arch" type="xml">
+        <xpath expr="//search" position="inside">
+          <!-- Current month filter -->
+          <filter string="Mes actual" name="current_month" domain="[('date', '&gt;=', datetime.date(datetime.datetime.now().year, datetime.datetime.now().month, 2).strftime('%Y/%m/%d')), ('date', '&lt;', datetime.date(datetime.datetime.now().year, datetime.datetime.now().month + 1, 1).strftime('%Y/%m/%d'))]" />
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

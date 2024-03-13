@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="diario_antiguedad_saldos_report" model="ir.actions.report">
+            <field name="name">Diario de antigüedad de saldos</field>
+            <field name="model">rep.diario.antiguedad.saldos</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">rep.diario.antiguedad.saldos.report</field>
+            <field name="report_file">Diario de antigüedad de saldos</field>
+            <field name="binding_model_id" ref="model_rep_diario_antiguedad_saldos"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

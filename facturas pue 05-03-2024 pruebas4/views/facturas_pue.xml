@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data>
+
+    <!-- Facturas pue views -->
+    <record id="rep_credito_facturas_pue_view_tree" model="ir.ui.view">
+      <field name="name">rep_credito.facturas_pue.view.tree</field>
+      <field name="model">rep_credito.facturas_pue</field>
+      <field name="arch" type="xml">
+        <tree string="" edit="false">
+          <field name="name" decoration-bf="1" />
+          <field name="fecha_inicial" />
+          <field name="fecha_final" />
+        </tree>
+      </field>
+    </record>
+
+    <record id="rep_credito_facturas_pue_view_form" model="ir.ui.view">
+      <field name="name">rep_credito.facturas_pue.view.form</field>
+      <field name="model">rep_credito.facturas_pue</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <field name="name" readonly="1" force_save="1" />
+              </h1>
+            </div>
+            <group>
+              <group>
+                <field name="fecha_inicial" />
+                <field name="fecha_final" />
+              </group>
+            </group>
+            <field name="facturas_ids" force_save="1" readonly="1" nolabel="1">
+              <tree edit="false" create="false" delete="false" default_order="invoice_date desc">
+                <field name="name" readonly="1" force_save="1" />
+                <field name="l10n_mx_edi_cfdi_uuid" readonly="1" force_save="1" />
+                <field name="x_studio_cliente" readonly="1" force_save="1" />
+                <field name="type_name" readonly="1" force_save="1" />
+                <field name="l10n_mx_edi_payment_policy" readonly="1" force_save="1" />
+                <field name="canal_distribucion" readonly="1" force_save="1" />
+                <field name="invoice_partner_display_name" readonly="1" force_save="1" />
+                <field name="invoice_payment_term_id" readonly="1" force_save="1" />
+                <field name="invoice_date" readonly="1" force_save="1" />
+                <field name="invoice_date_due" readonly="1" force_save="1" />
+                <field name="x_studio_tipo" readonly="1" force_save="1" />
+                <field name="activity_ids" readonly="1" force_save="1" invisible="1" />
+                <field name="company_id" readonly="1" force_save="1" />
+                <field name="amount_untaxed_signed" readonly="1" force_save="1" />
+                <field name="amount_total_signed" readonly="1" force_save="1" />
+                <field name="state" readonly="1" force_save="1" widget="badge" decoration-success="state == 'posted'" decoration-info="state == 'draft'" />
+                <field name="payment_state" readonly="1" force_save="1" widget="badge" decoration-danger="payment_state == 'not_paid'" decoration-warning="payment_state in ('partial', 'in_payment')" decoration-success="payment_state in ('paid', 'reversed')" />
+                <field name="edi_state" readonly="1" force_save="1" />
+                <field name="id_factura" readonly="1" force_save="1" />
+              </tree>
+            </field>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="rep_credito_facturas_pue_action" model="ir.actions.act_window">
+      <field name="name">Facturas PUE</field>
+      <field name="res_model">rep_credito.facturas_pue</field>
+      <field name="view_mode">tree,form</field>
+      <field name="binding_model_id" ref="model_rep_credito_facturas_pue"></field>
+    </record>
+  </data>
+</odoo>

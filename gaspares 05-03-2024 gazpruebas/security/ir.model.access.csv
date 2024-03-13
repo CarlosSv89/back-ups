@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gaspar_precios,access_gaspar_precios,model_gaspar_precios,base.group_user,1,1,1,1
+access_gaspar_condiciones_pago,access_gaspar_condiciones_pago,model_gaspar_condiciones_pago,base.group_user,1,1,1,1
+access_gaspar_centro_distribucion,access_gaspar_centro_distribucion,model_gaspar_centro_distribucion,base.group_user,1,1,1,1
+access_gaspar_medidor,access_gaspar_medidor,model_gaspar_medidor,base.group_user,1,1,1,1
+access_gaspar_rep_servicios,access_gaspar_rep_servicios,model_gaspar_rep_servicios,base.group_user,1,1,1,1
+access_gaspar_rep_servicios_linea,access_gaspar_rep_servicios_linea,model_gaspar_rep_servicios_linea,base.group_user,1,1,1,1
+access_gaspar_rep_eventos,access_gaspar_rep_eventos,model_gaspar_rep_eventos,base.group_user,1,1,1,1
+access_gaspar_rep_eventos_linea,access_gaspar_rep_eventos_linea,model_gaspar_rep_eventos_linea,base.group_user,1,1,1,1
+access_gaspar_rep_ruta,access_gaspar_rep_ruta,model_gaspar_rep_ruta,base.group_user,1,1,1,1
+access_gaspar_rep_ruta_linea,access_gaspar_rep_ruta_linea,model_gaspar_rep_ruta_linea,base.group_user,1,1,1,1

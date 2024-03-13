@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="servicios_gaspar_report" model="ir.actions.report">
+            <field name="name">Reporte de servicios de gaspar</field>
+            <field name="model">gaspar.rep.servicios</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">gaspar.rep.servicios</field>
+            <field name="report_file">Reporte de servicios gaspar</field>
+            <field name="binding_model_id" ref="model_gaspar_rep_servicios"/>
+            <field name="binding_type">report</field>
+        </record>
+        <record id="eventos_gaspar_report" model="ir.actions.report">
+            <field name="name">Reporte de eventos de gaspar</field>
+            <field name="model">gaspar.rep.eventos</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">gaspar.rep.eventos</field>
+            <field name="report_file">Reporte de eventos gaspar</field>
+            <field name="binding_model_id" ref="model_gaspar_rep_eventos"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="ruta_gaspar_report" model="ir.actions.report">
+            <field name="name">Reporte de ruta de gaspar</field>
+            <field name="model">gaspar.rep.ruta</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">gaspar.rep.ruta</field>
+            <field name="report_file">Reporte de ruta gaspar</field>
+            <field name="binding_model_id" ref="model_gaspar_rep_ruta"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

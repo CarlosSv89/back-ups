@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <!-- Reglas -->
+        <record model="ir.rule" id="rep_diario_cyc_multicompany">
+            <field name="name">Diario reportes cyc multi-compañía</field>
+            <field name="model_id" ref="model_rep_diario_cyc"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="rep_diario_cliente_cyc_multicompany">
+            <field name="name">Diario reportes clientes credito multi-compañía</field>
+            <field name="model_id" ref="model_rep_diario_cliente_cyc"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="rep_diario_antiguedad_saldos_multicompany">
+            <field name="name">Diario reporte antiguedad de saldos multi-compañía</field>
+            <field name="model_id" ref="model_rep_diario_antiguedad_saldos"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="rep_diario_saldos_xcobrar_multicompany">
+            <field name="name">Diario reporte de saldos por cobrar multi-compañía</field>
+            <field name="model_id" ref="model_rep_diario_saldos_xcobrar"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="rep_facturas_pue_multicompany">
+            <field name="name">Reporte de facturas PUE</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+    </data>
+</odoo>

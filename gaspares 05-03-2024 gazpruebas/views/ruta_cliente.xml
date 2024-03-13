@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- rutas.clientes inherit form view -->
+        <record id="view_rutas_clientes_form" model="ir.ui.view">
+            <field name="name">rutas.clientes.inherit.view.form</field>
+            <field name="model">rutas.clientes</field>
+            <field name="inherit_id" ref="pos_assets.view_rutas_clientes_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='id_ruta']" position="after">
+                    <field name="id_planta" readonly="1" force_save="1"/>
+                    <field name="medidor_id"/>
+                    <field name="config_id"/>
+                </xpath>
+                <xpath expr="//field[@name='code']" position="replace">
+                    <!-- Add your fields here -->
+                    <field name="code" force_save="1" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- rutas.clientes inherit tree view -->
+        <record id="view_rutas_clientes_tree" model="ir.ui.view">
+            <field name="name">rutas.clientes.inherit.view.tree</field>
+            <field name="model">rutas.clientes</field>
+            <field name="inherit_id" ref="pos_assets.view_rutas_clientes_tree"/>
+            <field name="arch" type="xml">
+                <!-- Add your xpath here -->
+                <xpath expr="//field[@name='clientes_lines_ids']" position="replace">
+                    <!-- Add your fields here -->
+                    <field name="code"/>
+                    <field name="medidor_id"/>
+                    <field name="config_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_sync_ruta_gaspar" model="ir.actions.server">
+            <field name="name">G4S: Sincronizar ruta</field>
+            <field name="model_id" ref="pos_assets.model_rutas_clientes"/>
+            <!-- <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]"/> -->
+            <field name="binding_model_id" ref="pos_assets.model_rutas_clientes" />
+            <field name="state">code</field>
+            <field name="code">records.sync_to_gaspar()</field>
+        </record>
+
+        <record id="action_asigna_ruta_medidor" model="ir.actions.server">
+            <field name="name">G4S: Sincronizar Ruta/Medidor</field>
+            <field name="model_id" ref="pos_assets.model_rutas_clientes"/>
+            <!-- <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]"/> -->
+            <field name="binding_model_id" ref="pos_assets.model_rutas_clientes" />
+            <field name="state">code</field>
+            <field name="code">records.asignar_ruta_medidor()</field>
+        </record>
+    </data>
+</odoo>

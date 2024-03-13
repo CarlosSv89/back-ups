@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+        <!-- Reglas -->
+        <record model="ir.rule" id="gaspares_precios_multicompany">
+            <field name="name">Precios gaspar multi-compañía</field>
+            <field name="model_id" ref="model_gaspar_precios"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="gaspares_centro_dist_multicompany">
+            <field name="name">Centros de distribución gaspar multi-compañía</field>
+            <field name="model_id" ref="model_gaspar_centro_distribucion"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="gaspares_condiciones_pago_multicompany">
+            <field name="name">Condiciones de pago gaspar multi-compañía</field>
+            <field name="model_id" ref="model_gaspar_condiciones_pago"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="gaspares_precios_multicompany">
+            <field name="name">Medidores gaspar multi-compañía</field>
+            <field name="model_id" ref="model_gaspar_medidor"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="reporte_servicios_gaspar_multicompany">
+            <field name="name">Reporte de servicios gaspar multi-compañía</field>
+            <field name="model_id" ref="model_gaspar_rep_servicios"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="reporte_eventos_gaspar_multicompany">
+            <field name="name">Reporte de eventos gaspar multi-compañía</field>
+            <field name="model_id" ref="model_gaspar_rep_eventos"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="reporte_ruta_gaspar_multicompany">
+            <field name="name">Reporte de ruta gaspar multi-compañía</field>
+            <field name="model_id" ref="model_gaspar_rep_ruta"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="reporte_servicios_gaspar_multicompany">
+            <field name="name">Clientes gaspar multi-compañía</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <!-- Grupos -->
+        <record id="group_g4s" model="res.groups">
+            <field name="name">G4S</field>
+        </record>
+    </data>
+</odoo>

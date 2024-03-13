@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+    <record id="account_move_view_form" model="ir.ui.view">
+      <field name="name">account.move.view.form.inherit</field>
+      <field name="model">account.move</field>
+      <field name="inherit_id" ref="account.view_move_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//form/div/button[@name='action_process_edi_web_services']" position="replace">
+          <button name="open_wizzard" type="object" class="oe_link" string="Enviar ahora" modifiers="{}" options="{}"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

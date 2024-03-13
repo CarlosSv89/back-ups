@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_factura_pago_imediato_factura_pago_imediato,factura_pago_imediato.factura_pago_imediato,model_factura_pago_imediato_factura_pago_imediato,base.group_user,1,1,1,1

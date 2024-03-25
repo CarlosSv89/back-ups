@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+<!--
+Wizard Factura Global PoS
+-->
+        <record id="view_invoice_global_wizard_form" model="ir.ui.view">
+            <field name="name">view.invoice.global.wizard.form</field>
+            <field name="model">invoice.global.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Factura Global">
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="pos_config_ids" string="Elija un punto de venta"/>
+                        </div>
+                        <h1>
+                            <field name="pos_config_ids" string="Punto de venta" options="{'no_create': True}" widget="many2many_tags"/>
+                        </h1>
+                    </div>
+                    <group colspan="2" col="2">
+                        <group string="Facturación" colspan="2">
+                            <field name="journal_id" options="{'no_create': True}"/>
+                        </group>
+                    </group>
+                    <group string="Rango de fechas" colspan="6" col="6">
+                        <group colspan="2">
+                            <field name="date_start"/>
+                        </group>
+                        <group colspan="2">
+                            <field name="date_end"/>
+                        </group>
+                        <group colspan="2">
+                            <button name="get_pos_amounts" string="Obtener Montos" type="object"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="partner_id" options="{'no_create': True}"/>
+                            <field name="payment_bank" readonly="1" force_save="1"/>
+                            <field name="payment_cash" readonly="1" force_save="1"/>
+                        </group>
+                        <group>
+                            <field name="amount" required="1"/>
+                            <field name="type_inv" required="1"/>
+                            <field name="sale_inv" required="1"/>
+                            <field name="uom_id" options="{'no_create': True}" attrs="{'invisible': [('sale_inv','=','product')], 'required': [('sale_inv','=', 'sale')]}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <button name="action_calculate" string="Calcular" type="object" class="oe_highlight"/>
+                    </group>
+                    <group string="Ventas">
+                        <field name="pos_order_ids" nolabel="1" readonly="1">
+                            <tree>
+                                <field name="session_id"/>
+                                <field name="date_order"/>
+                                <field name="name"/>
+                                <field name="amount_total" sum="Total" widget="monetary" decoration-bf="1"/>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="state" invisible="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="action_create_invoice" string="Crear factura" type="object" class="oe_highlight"/>
+                         ó 
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_pos_inv_global_form" model="ir.actions.act_window">
+            <field name="name">Factura Global</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">invoice.global.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_invoice_global_wizard_form"/>
+            <field name="domain">[]</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_pos_inv_global" parent="point_of_sale.menu_point_of_sale" action="action_pos_inv_global_form" sequence="10" groups="point_of_sale.group_pos_manager,point_of_sale.group_pos_user"/>
+
+    </data>
+</odoo>
+
+        

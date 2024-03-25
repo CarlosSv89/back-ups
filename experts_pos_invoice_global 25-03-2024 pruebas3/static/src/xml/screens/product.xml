@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="experts_productiterm_template" xml:space="preserve">
+    <t t-name="ProductNameExtend" t-inherit="point_of_sale.ProductItem" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('product-name')]" position="replace">
+           <div class="product-name" t-attf-id="article_product_{{props.product.id}}">
+                [<t t-esc="props.product.default_code" />]  <t t-esc="props.product.display_name" />
+            </div>  
+        </xpath>
+        <xpath expr="//span[hasclass('price-tag')]" position="before">
+            <span t-attf-class="qty-tag {{props.product.rounded_qty() &lt; 1 ? 'not-available':''}}">
+                <t t-esc="props.product.rounded_qty()"/>
+            </span>
+        </xpath>
+    </t>
+</templates>

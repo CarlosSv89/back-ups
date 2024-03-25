@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <!-- Custom css to override default -->
+      <template id="assets_backend" name="pos_clients_view assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+          <link rel="stylesheet" type="text/scss" href="/pos_clients_view/static/src/css/styles.css"/>
+        </xpath>
+      </template>
+      
+      <!-- Custom js overriding search funtion -->
+      <template id="assets_pos" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+          <script type="text/javascript" src="/pos_clients_view/static/src/js/db_extend.js"></script>
+          <script type="text/javascript" src="/pos_clients_view/static/src/js/models_extend.js"></script>
+        </xpath>
+      </template>
+    </data>
+</odoo>

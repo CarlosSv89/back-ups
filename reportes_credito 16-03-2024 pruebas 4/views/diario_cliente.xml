@@ -1,0 +1,78 @@
+<odoo>
+    <data>
+        <!-- rep.diario.cyc action window -->
+        <record id="rep_diario_cliente_cyc_action" model="ir.actions.act_window">
+            <field name="name">Sábana detallada por cliente</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rep.diario.cliente.cyc</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Sábana detallada por cliente</p>
+            <p>Presiona "Crear" para agregar un nuevo diario</p>
+            </field>
+        </record>
+    
+        <!-- rep.diario.cyc tree view -->
+        <record id="rep_diario_cliente_cyc_view_tree" model="ir.ui.view">
+            <field name="name">Sábana detallada por cliente</field>
+            <field name="model">rep.diario.cliente.cyc</field>
+            <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="fecha_inicio"/>
+                <field name="fecha_final"/>
+            </tree>
+            </field>
+        </record>
+    
+        <!-- rep.diario.cyc form view -->
+        <record id="rep_diario_cliente_cyc_view_form" model="ir.ui.view">
+            <field name="name">rep.diario.cyc.view.form</field>
+            <field name="model">rep.diario.cliente.cyc</field>
+            <field name="arch" type="xml">
+            <form string="form">
+                <sheet>
+                <div class="oe_title">
+                    <h1>
+                    <field name="name" readonly="1" />
+                    </h1>
+                </div>
+                <group>
+                    <field name="fecha_inicio"/>
+                    <field name="fecha_final"/>
+                </group>
+                <field name="linea_diario_ids" force_save="1">
+                    <tree delete="false" create="false" edit="false" editable="false">
+                    <field name="fecha" force_save="1" readonly="1"/>
+                    <field name="partner_id" force_save="1" readonly="1"/>
+                    <field name="saldo_inicial" force_save="1" readonly="1"/>
+                    <field name="credito_otorgado" force_save="1" readonly="1"/>
+                    <field name="descuentos" force_save="1" readonly="1"/>
+                    <field name="cobranza" force_save="1" readonly="1"/>
+                    <field name="subtotal" force_save="1" readonly="1"/>
+                    <field name="nota_cargo" force_save="1" readonly="1"/>
+                    <field name="cobranza_nota_cargo" force_save="1" readonly="1"/>
+                    <field name="cobranza_anticipada" force_save="1" readonly="1"/>
+                    <field name="ajuste_fuera_periodo" force_save="1" readonly="1"/>
+                    <field name="saldo_final" force_save="1" readonly="1"/>
+                    </tree>
+                </field>
+                </sheet>
+            </form>
+            </field>
+        </record>
+    
+    
+        <!-- account.payment inherit form view -->
+        <!-- <record id="view_account_payment_form" model="ir.ui.view">
+            <field name="name">account.payment.inherit.view.form</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_bank_id']" position="after">
+                <field name="x_studio_tipo_de_pago"/>
+            </xpath>
+            </field>
+        </record> -->
+    </data>
+</odoo>

@@ -1,0 +1,9 @@
+<odoo>
+  <!-- <template id="client_list_screen_inherit" inherit_id="point_of_sale.ClientListScreen">
+    <xpath expr="//table" position="after">
+      <div>
+        <p>Hellooooooo</p>
+      </div>
+    </xpath>
+  </template> -->
+</odoo>

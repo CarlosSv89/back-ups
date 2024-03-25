@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="experts_orderline_template" xml:space="preserve">
+    <t t-name="OrderlineExtend" t-inherit="point_of_sale.Orderline" t-inherit-mode="extension" owl="1">
+        <xpath expr="//li[hasclass('info')]//em" position="replace">
+             <em>
+                <t t-esc="props.line.get_quantity_str()" />
+                <t t-set='qty_available' t-value='props.line.get_product().qty_available'/>
+                <t t-if="props.line.get_product().type == 'product'">
+                    (de <span t-attf-class="qty-info {{qty_available &lt; props.line.get_quantity_str() ? 'not-available':''}}"><t t-esc="props.line.get_product().rounded_qty()"/></span>)
+                </t>
+            </em>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,6 @@
+.pos .clientlist-screen .client-list th,
+.pos .clientlist-screen .client-list td {
+  padding: 12px 8px;
+  max-width: 100px;
+  overflow-x: scroll;
+}

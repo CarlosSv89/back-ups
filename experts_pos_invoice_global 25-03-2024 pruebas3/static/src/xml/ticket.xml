@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ExpertsReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('pos-receipt-order-data')]" position="before">
+            <div class="pos-center-align" id="ticket-barcode">
+                <img t-att-src="'/report/barcode/?type=Code128&amp;value='+receipt.uid" style="padding-top: 1px; height: 70px; max-width: 100%;" />
+            </div>
+        </xpath>
+    </t>
+</templates>

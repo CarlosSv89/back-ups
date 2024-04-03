@@ -1,0 +1,148 @@
+<odoo>
+    <data>
+    <!-- rep.diario.cyc action window -->
+    <record id="rep_diario_saldos_x_cobrar_action" model="ir.actions.act_window">
+        <field name="name">Diario de saldos por cobrar</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">rep.diario.saldos.xcobrar</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Diario de saldos por cobrar mensual</p>
+        <p>Presiona "Crear" para agregar un nuevo diario</p>
+        </field>
+    </record>
+
+    <!-- rep.diario.cyc tree view -->
+    <record id="rep_diario_saldos_x_cobrar_view_tree" model="ir.ui.view">
+        <field name="name">Diario de saldos por cobrar mensual</field>
+        <field name="model">rep.diario.saldos.xcobrar</field>
+        <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="fecha_inicial"/>
+            <field name="fecha_final"/>
+            <field name="fecha_report" />
+        </tree>
+        </field>
+    </record>
+
+    <!-- rep.diario.cyc form view -->
+    <record id="rep_diario_saldos_x_cobrar_view_form" model="ir.ui.view">
+        <field name="name">Diario de saldos por cobrar mensual</field>
+        <field name="model">rep.diario.saldos.xcobrar</field>
+        <field name="arch" type="xml">
+        <form string="form">
+            <sheet>
+            <div class="oe_title">
+                <h1>
+                <field name="name" readonly="1" />
+                </h1>
+            </div>
+            <group name="group_top">
+                <group name="group_right">
+                    <field name="fecha_inicial"/>
+                    <field name="fecha_final"/>
+                </group>
+                <group name="group_left">
+                    <field name="fecha_report" force_save="1" attrs="{'readonly':[('can_edit_report', '=', False)]}"/>
+                    <field name="company_name" force_save="1" attrs="{'readonly':[('can_edit_report', '=', False)]}"/>
+                    <field name="can_edit_report" invisible="1"/>
+                </group>
+            </group>
+            <notebook>
+                <page name="saldos_cobrar" string="Saldos por cobrar">
+                    <field name="linea_diario_rpt" force_save="1" attrs="{'readonly':[('can_edit_report', '=', False)]}">
+                        <tree>
+                            <field name="concepto"/>
+                            <!-- 2022 -->
+                            <field name="enero_2022" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2022-02-01'), ('parent.fecha_final', '&lt;', '2022-01-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="enero_2022" decoration-info="enero_2022 &gt; 0.00" decoration-danger="enero_2022 &lt; 0.00"/>
+                            <field name="febrero_2022" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2022-03-01'),('parent.fecha_final', '&lt;', '2022-02-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="febrero_2022" decoration-info="febrero_2022 &gt; 0.00" decoration-danger="febrero_2022 &lt; 0.00"/>
+                            <field name="marzo_2022" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2022-04-01'),('parent.fecha_final', '&lt;', '2022-03-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="marzo_2022" decoration-info="marzo_2022 &gt; 0.00" decoration-danger="marzo_2022 &lt; 0.00"/>
+                            <field name="abril_2022" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2022-05-01'),('parent.fecha_final', '&lt;', '2022-04-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="abril_2022" decoration-info="abril_2022 &gt; 0.00" decoration-danger="abril_2022 &lt; 0.00"/>
+                            <field name="mayo_2022" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2022-06-01'),('parent.fecha_final', '&lt;', '2022-05-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="mayo_2022" decoration-info="mayo_2022 &gt; 0.00" decoration-danger="mayo_2022 &lt; 0.00"/>
+                            <field name="junio_2022" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2022-07-01'),('parent.fecha_final', '&lt;', '2022-06-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="junio_2022" decoration-info="junio_2022 &gt; 0.00" decoration-danger="junio_2022 &lt; 0.00"/>
+                            <field name="julio_2022" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2022-08-01'),('parent.fecha_final', '&lt;', '2022-07-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="julio_2022" decoration-info="julio_2022 &gt; 0.00" decoration-danger="julio_2022 &lt; 0.00"/>
+                            <field name="agosto_2022" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2022-09-01'),('parent.fecha_final', '&lt;', '2022-08-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="agosto_2022" decoration-info="agosto_2022 &gt; 0.00" decoration-danger="agosto_2022 &lt; 0.00"/>
+                            <field name="septiembre_2022" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2022-10-01'),('parent.fecha_final', '&lt;', '2022-09-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="septiembre_2022" decoration-info="septiembre_2022 &gt; 0.00" decoration-danger="septiembre_2022 &lt; 0.00"/>
+                            <field name="octubre_2022" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2022-11-01'),('parent.fecha_final', '&lt;', '2022-10-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="octubre_2022" decoration-info="octubre_2022 &gt; 0.00" decoration-danger="octubre_2022 &lt; 0.00"/>
+                            <field name="noviembre_2022" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2022-12-01'),('parent.fecha_final', '&lt;', '2022-11-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="noviembre_2022" decoration-info="noviembre_2022 &gt; 0.00" decoration-danger="noviembre_2022 &lt; 0.00"/>
+                            <field name="diciembre_2022" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2023-01-01'),('parent.fecha_final', '&lt;', '2022-12-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="diciembre_2022" decoration-info="diciembre_2022 &gt; 0.00" decoration-danger="diciembre_2022 &lt; 0.00"/>
+                            
+                            <!-- 2023 -->
+                            <field name="enero_2023" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2023-02-01'),('parent.fecha_final', '&lt;', '2023-01-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="enero_2023" decoration-info="enero_2023 &gt; 0.00" decoration-danger="enero_2023 &lt; 0.00"/>
+                            <field name="febrero_2023" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2023-03-01'),('parent.fecha_final', '&lt;', '2023-02-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="febrero_2023" decoration-info="febrero_2023 &gt; 0.00" decoration-danger="febrero_2023 &lt; 0.00"/>
+                            <field name="marzo_2023" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2023-04-01'),('parent.fecha_final', '&lt;', '2023-03-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="marzo_2023" decoration-info="marzo_2023 &gt; 0.00" decoration-danger="marzo_2023 &lt; 0.00"/>
+                            <field name="abril_2023" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2023-05-01'),('parent.fecha_final', '&lt;', '2023-04-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="abril_2023" decoration-info="abril_2023 &gt; 0.00" decoration-danger="abril_2023 &lt; 0.00"/>
+                            <field name="mayo_2023" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2023-06-01'),('parent.fecha_final', '&lt;', '2023-05-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="mayo_2023" decoration-info="mayo_2023 &gt; 0.00" decoration-danger="mayo_2023 &lt; 0.00"/>
+                            <field name="junio_2023" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2023-07-01'),('parent.fecha_final', '&lt;', '2023-06-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="junio_2023" decoration-info="junio_2023 &gt; 0.00" decoration-danger="junio_2023 &lt; 0.00"/>
+                            <field name="julio_2023" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2023-08-01'),('parent.fecha_final', '&lt;', '2023-07-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="julio_2023" decoration-info="julio_2023 &gt; 0.00" decoration-danger="julio_2023 &lt; 0.00"/>
+                            <field name="agosto_2023" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2023-09-01'),('parent.fecha_final', '&lt;', '2023-08-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="agosto_2023" decoration-info="agosto_2023 &gt; 0.00" decoration-danger="agosto_2023 &lt; 0.00"/>
+                            <field name="septiembre_2023" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2023-10-01'),('parent.fecha_final', '&lt;', '2023-09-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="septiembre_2023" decoration-info="septiembre_2023 &gt; 0.00" decoration-danger="septiembre_2023 &lt; 0.00"/>
+                            <field name="octubre_2023" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2023-11-01'),('parent.fecha_final', '&lt;', '2023-10-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="octubre_2023" decoration-info="octubre_2023 &gt; 0.00" decoration-danger="octubre_2023 &lt; 0.00"/>
+                            <field name="noviembre_2023" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2023-12-01'),('parent.fecha_final', '&lt;', '2023-11-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="noviembre_2023" decoration-info="noviembre_2023 &gt; 0.00" decoration-danger="noviembre_2023 &lt; 0.00"/>
+                            <field name="diciembre_2023" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2024-01-01'),('parent.fecha_final', '&lt;', '2023-12-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="diciembre_2023" decoration-info="diciembre_2023 &gt; 0.00" decoration-danger="diciembre_2023 &lt; 0.00"/>
+
+                            <!-- 2024 -->
+                            <field name="enero_2024" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2024-02-01'),('parent.fecha_final', '&lt;', '2024-01-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="enero_2024" decoration-info="enero_2024 &gt; 0.00" decoration-danger="enero_2024 &lt; 0.00"/>
+                            <field name="febrero_2024" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2024-03-01'),('parent.fecha_final', '&lt;', '2024-02-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="febrero_2024" decoration-info="febrero_2024 &gt; 0.00" decoration-danger="febrero_2024 &lt; 0.00"/>
+                            <field name="marzo_2024" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2024-04-01'),('parent.fecha_final', '&lt;', '2024-03-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="marzo_2024" decoration-info="marzo_2024 &gt; 0.00" decoration-danger="marzo_2024 &lt; 0.00"/>
+                            <field name="abril_2024" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2024-05-01'),('parent.fecha_final', '&lt;', '2024-04-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="abril_2024" decoration-info="abril_2024 &gt; 0.00" decoration-danger="abril_2024 &lt; 0.00"/>
+                            <field name="mayo_2024" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2024-06-01'),('parent.fecha_final', '&lt;', '2024-05-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="mayo_2024" decoration-info="mayo_2024 &gt; 0.00" decoration-danger="mayo_2024 &lt; 0.00"/>
+                            <field name="junio_2024" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2024-07-01'),('parent.fecha_final', '&lt;', '2024-06-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="junio_2024" decoration-info="junio_2024 &gt; 0.00" decoration-danger="junio_2024 &lt; 0.00"/>
+                            <field name="julio_2024" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2024-08-01'),('parent.fecha_final', '&lt;', '2024-07-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="julio_2024" decoration-info="julio_2024 &gt; 0.00" decoration-danger="julio_2024 &lt; 0.00"/>
+                            <field name="agosto_2024" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2024-09-01'),('parent.fecha_final', '&lt;', '2024-08-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="agosto_2024" decoration-info="agosto_2024 &gt; 0.00" decoration-danger="agosto_2024 &lt; 0.00"/>
+                            <field name="septiembre_2024" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2024-10-01'),('parent.fecha_final', '&lt;', '2024-09-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="septiembre_2024" decoration-info="septiembre_2024 &gt; 0.00" decoration-danger="septiembre_2024 &lt; 0.00"/>
+                            <field name="octubre_2024" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2024-01-11'),('parent.fecha_final', '&lt;', '2024-10-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="octubre_2024" decoration-info="octubre_2024 &gt; 0.00" decoration-danger="octubre_2024 &lt; 0.00"/>
+                            <field name="noviembre_2024" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2024-12-01'),('parent.fecha_final', '&lt;', '2024-11-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="noviembre_2024" decoration-info="noviembre_2024 &gt; 0.00" decoration-danger="noviembre_2024 &lt; 0.00"/>
+                            <field name="diciembre_2024" attrs="{'column_invisible': ['|','|','|',('parent.fecha_inicial', '&gt;=', '2025-01-01'),('parent.fecha_final', '&lt;', '2024-12-01'), ('parent.fecha_inicial', '=', False), ('parent.fecha_final', '=', False)]}" sum="diciembre_2024" decoration-info="diciembre_2024 &gt; 0.00" decoration-danger="diciembre_2024 &lt; 0.00"/>
+                        </tree> 
+                    </field>
+                </page>
+                <page name="desglose_odenes" string="Desglose ordenes">
+                    <field name="linea_desglose_ordenes" force_save="1" attrs="{'readonly':[('can_edit_report', '=', False)]}"  default_order="partner_id desc">
+                        <tree>
+                            <field name="concepto" />
+                            <field name="date_order"/>
+                            <field name="date_order_due"/>
+                            <field name="order_folio"/>
+                            <field name="partner_id"/>
+                            <field name="amount_total" sum="amount_total"/>
+                        </tree>
+                    </field>
+                </page>
+                <page name="desglose_facturas" string="Desglose facturas">
+                    <field name="linea_desglose_facturas" force_save="1" attrs="{'readonly':[('can_edit_report', '=', False)]}">
+                        <tree>
+                            <field name="concepto" />
+                            <field name="name" />
+                            <field name="l10n_mx_edi_cfdi_uuid"/>
+                            <field name="invoice_partner_display_name"/>
+                            <field name="invoice_date"/>
+                            <field name="invoice_date_due"/>
+                            <field name="amount_total" />
+                            <field name="amount_residual_signed" sum="amount_residual_signed"/>
+                            <field name="edi_state"/>
+                            <field name="payment_state"/>
+                            <field name="state"/>                        
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
+            </sheet>
+        </form>
+        </field>
+    </record>
+
+    <!-- account.payment inherit form view -->
+    <!-- <record id="view_account_payment_form" model="ir.ui.view">
+        <field name="name">account.payment.inherit.view.form</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+        <xpath expr="//field[@name='partner_bank_id']" position="after">
+            <field name="x_studio_tipo_de_pago"/>
+        </xpath>
+        </field>
+    </record> -->
+    </data>
+</odoo>

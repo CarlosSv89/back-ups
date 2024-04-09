@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <menuitem id="menu_reporte_credito_main" name="Reportes de credito" 
+            sequence="99" action="rep_diario_cyc_action" web_icon="reportes_credito,static/description/icon.png" />
+
+        <menuitem id="menu_reporte_saldos_xcobrar" name="Reporte de saldos por cobrar" parent="menu_reporte_credito_main"
+            sequence="99" action="rep_diario_saldos_x_cobrar_action" />
+        
+        <menuitem id="menu_reporte_credito_cliente" name="Sábana detallada por cliente" parent="menu_reporte_credito_main"
+            sequence="10" action="rep_diario_cliente_cyc_action" />
+
+        <menuitem id="menu_reporte_credito_cliente" name="Sábana diaria acumulada" parent="menu_reporte_credito_main"
+            sequence="10" action="rep_diario_cyc_action" />
+
+        <menuitem id="menu_reporte_antiguedad_saldos" name="Reporte de antigüedad de saldos" parent="menu_reporte_credito_main"
+            sequence="20" action="rep_diario_antiguedad_saldos_action" />
+
+        <menuitem id="menu_reporte_antiguedad_saldos_list" name="Reporte de antigüedad de saldos" parent="reportes_contaraloria.contraloria_menu_2"
+            sequence="20" action="rep_diario_antiguedad_saldos_action" />
+            
+    </data>
+</odoo>

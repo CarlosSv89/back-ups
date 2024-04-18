@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-# Testing new git pc
+# Testing new git pcsd
 
 class catalogo(models.Model):
     _name = 'catalogo.variables'

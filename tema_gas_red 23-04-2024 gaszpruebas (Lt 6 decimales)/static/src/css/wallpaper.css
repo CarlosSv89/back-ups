@@ -1,0 +1,383 @@
+html .o_web_client .o_main_navbar {
+    background-color: #cc2128 !important;
+}
+
+.o_main_navbar > ul {
+    background-color: #cc2128 !important;
+}
+
+.o_main_navbar > .o_menu_sections > li > a:hover, .o_main_navbar > .o_menu_systray > li > a:hover, .o_main_navbar > .o_menu_sections > li.show > a, .o_main_navbar > .o_menu_systray > li.show > a {
+    background-color: #e04046 !important;
+}
+
+
+/* globo de notificacion */
+.o_mail_systray_item .o_notification_counter {
+    background: #ff0000 !important;
+}
+
+.o_MessagingMenu .o_MessagingMenu_counter {
+    background-color: #ff0000 !important;
+}
+
+.badge {
+    border: 1px solid transparent;
+}
+
+
+/* letras e iconos blancos navar */
+.o_menu_brand {
+    color: #ffffff !important;
+}
+
+.oe_topbar_name {
+    color: #ffffff !important;
+}
+
+.topbar_icon .fa {
+    color: #ffffff !important;
+}
+
+.o_menu_apps {
+    color: #ffffff !important;
+}
+
+.o_main_navbar > ul > li > a, .o_main_navbar > ul > li > label {
+    color: #ffffff !important;
+}
+
+.o_notification_counter, .o_MessagingMenu_counter{
+    background: #6c757d !important;
+}
+
+.btn-link {
+    color: #6c757d !important;
+}
+
+
+.badge-primary {
+    color: #FFFFFF;
+    background-color: #05a126 !important;
+}
+
+
+/* Ajuste ancho columnas tabla */
+.o_list_view .table-responsive .table {
+    width: fit-content !important;
+    min-width: 100%;
+}
+
+.o_content > .o_list_view > .table-responsive > .table:not(.o_list_table_grouped) > tbody > tr:not(.o_list_table_grouped) > td {
+    padding: 4px 4px;
+}
+
+tr.o_data_row {
+    font-size: 13px;
+}
+
+
+/* Checkbox */
+.custom-checkbox label:before {
+    padding:  6px;
+}
+
+/* Palomita de checkbox */
+.custom-checkbox input:checked + label::after {
+    top: 3px;
+    left: 5px;
+    width: 6px;
+    height: 12px;
+}
+
+.custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before, .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #cc2128 !important;
+}
+
+/* Botones */
+
+.btn-primary {
+    color: #ffffff !important;
+    background-color: #cc2128 !important;
+    border-color: #cc2128 !important;
+}
+
+.btn-primary:hover {
+    color: #ffffff !important;
+    background-color: #ff0000 !important;
+    border-color: #ff0000 !important;
+}
+
+.btn-primary:active {
+    color: #ffffff !important;
+    background-color: #ff0000 !important;
+    border-color: #ff0000 !important;
+}
+
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+    color: #ffffff !important;
+    background-color: #ff0000 !important;
+    border-color: #ff0000 !important;
+    -webkit-box-shadow: 0 0 0 .15rem rgba(255, 0, 0,.5) !important;
+    box-shadow: 0 0 0 .15rem rgba(255, 0, 0,.5) !important;
+}
+
+
+.o_form_view .oe_button_box .oe_stat_button .o_button_icon {
+    color: #cc2128 !important;
+}
+
+.o_form_view .oe_button_box .btn.oe_stat_button > .o_stat_info .o_stat_value{
+    color: #cc2128 !important;
+}
+
+.o_form_uri > span {
+    color: #cc2128 !important;
+}
+
+.o_form_view .o_form_uri {
+    color: #cc2128 !important;
+}
+
+.breadcrumb-item > a, .o_menu_item > a {
+    color: #cc2128 !important;
+}
+
+
+.o_field_widget.o_field_many2manytags .o_tag_color_5, .o_field_widget.o_field_many2manytags .o_tag_color_5::after {
+    background-color: rgba(255, 0, 0,.5) !important;
+    border: 1px solid transparent;
+    border-radius: 1px;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    background: #cc2128 !important;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+    background: #cc2128 !important;
+}
+
+input {
+    padding: 4px 4px;
+}
+
+.o_field_widget .o_input_dropdown {
+    width: 80%;
+}
+
+.o_kanban_view .o_kanban_record .o_field_many2manytags .o_tag.o_tag_color_5 span, .o_kanban_view .o_kanban_record .o_kanban_tags .o_tag.o_tag_color_5 span {
+    background-color: #cc2128 !important;
+}
+
+/* Barra lateral */
+#sidebar_panel , .sidebar_panel .sidebar_close{
+    background-color: #cc2128 !important;
+}
+
+.sidebar_panel .sidebar .sidebar_menu li:hover a {
+    background: #e04046 !important;
+}
+
+.sidebar_panel .nav-link {
+    opacity: 1;
+}
+
+.sidebar_panel .sidebar .sidebar_head {
+    padding-top: 10px;
+    padding-left: 23px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Fondo de pantalla */
+.o_home_menu_background {
+    background: url(/web_enterprise/static/src/img/home-menu-bg-overlay.svg), linear-gradient(to right bottom, #f4f4f4, #d2d2d2) !important;
+    background-size: cover !important;
+}
+
+/* Boton de estatus (flecha) */
+.o_statusbar_status .o_arrow_button.btn-primary {
+    border: solid 1px #cc2128 !important;
+    color: #ffffff!important;
+}
+
+.o_form_view .o_form_statusbar > .o_statusbar_status > .o_arrow_button:not(:first-child):before {
+    right: -11px;
+    border-left-color: #cc2128 !important;
+}
+
+.o_statusbar_status .o_arrow_button.btn-secondary {
+    border: solid 1px #cc2128 !important;
+    color: #cc2128 !important;
+    background-color: #ffffff !important;
+}
+
+/* Mensaje Cargando */
+.o_loading {
+    background-color: #cc2128 !important;
+}
+
+.o_list_selection_box {
+    border: 1px solid rgba(255, 0, 0,.5) !important;
+    background-color: rgba(255, 0, 0,.5) !important;
+    color: #ffffff !important;
+}
+
+
+/* Notificacion de seleccion */
+.o_onboarding.o_onboarding_violet .o_onboarding_wrap {
+    background-color: rgba(255, 0, 0, 0.25);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 0, 0,.5), #ff0000));
+    background-image: -webkit-linear-gradient(top, rgba(255, 0, 0,.5), #ff0000);
+    background-image: -moz-linear-gradient(top, rgba(255, 0, 0,.5), #ff0000);
+    background-image: -ms-linear-gradient(top, rgba(255, 0, 0,.5), #ff0000);
+    background-image: -o-linear-gradient(top, rgba(255, 0, 0,.5), #ff0000);
+    background-image: linear-gradient(to bottom, rgba(255, 0, 0,.5), #ff0000);
+}
+
+.o-no-caret > i, button[aria-pressed="true"] {
+    color: #ffffff !important;
+}
+
+/* Indicador calendario */
+.ui-state-active {
+    background-color: #cc2128 !important;
+    color: #ffffff !important;
+}
+
+.o_search_panel .o_search_panel_category .o_search_panel_section_icon{
+    color: #666666 !important;
+}
+
+.o_NotificationGroup_date {
+    color: #cc2128 !important;
+}
+
+.o_dial .o_dial_fold {
+    background-color: #cc2128 !important;
+}
+
+.o_dial .o_dial_main_buttons .o_dial_call_button .fa {
+    color: #666666 !important;
+}
+
+.o_dial .o_dial_fold .o_dial_window_close:hover {
+    border-color: #ff0000 !important;
+}
+
+.text-primary {
+    color: #666666 !important;
+}
+
+
+/* borde inferior barra superior */
+/* .o_main_navbar, nav.o_main_navbar.small_nav {
+    box-shadow: black 0px -1px 8px;
+    border-bottom: 3px solid rgba(236, 7, 7, 0.94) !important;
+    border-image: linear-gradient(0.25turn, rgb(255, 249, 34), rgb(255, 128, 5), blue) 1 / 1 / 0 stretch !important;
+} */
+
+.o_main_navbar {
+    border-bottom: 5px solid #ec0707f0 !important;
+    border-image: linear-gradient(0.25turn, #fff922, #ff8005,#ec0707f0, #046cff) !important;
+    border-image-slice: 1 !important;
+    box-shadow: black 0px -1px 10px !important;
+}
+
+/* logo barra lateral llamita */
+.sidebar_panel .sidebar .sidebar_logo img {
+    background-image: url(/tema_gas_red/static/src/img/llamita.png) !important;
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 62px;
+    border: 1px solid transparent;
+    height: 83px;
+    object-position: -99999px 99999px;
+}
+
+
+/* logo barra superior */
+.logo_gtmz_erp{
+    height: 60px;
+    position: fixed;
+    top: 0px;
+    align-self: center;
+}
+.logo_gtmz_erp img{
+    height: 100%;
+}
+
+
+/* logo inferior */
+.logo_gtmz{
+    position: fixed;
+    bottom :3%;
+    right: 3%;
+    height: 8%;
+    z-index: 1;
+}
+.logo_gtmz img{
+    height: 100%;
+}
+/* sidebar items */
+.item_sidebar{
+    content: "";
+    /* top: 100%; */
+    width: 80%;
+    left: 0;
+    height: 7px;
+    border-radius: 10px;
+    margin: auto;
+    background: linear-gradient(130deg, #ffffff, #ffffff 41.07%, #ffffff 76.05%);
+}
+
+.sidebar_panel .sidebar .sidebar_menu li a{
+    background: #cc2128 !important;
+    margin: 1% 0 !important;
+}
+/* Acomodación de titulos en sidebar */
+.sidebar_panel .sidebar .sidebar_menu li a{
+    white-space: normal;
+}
+.sidebar_logo, .sidebar_head {
+    background: #cc2128 !important;
+}
+.cntnt_sdbr{
+    background: #cc2128 !important;
+}
+/* .sidebar_head {
+    background: #850a0a !important;   
+} */
+
+/* OCULTAR APLICACIONES */
+/* .o_home_menu .o_apps{
+    display: none !important;
+} */
+/* #sidebar_panel{
+    width: 16%;
+} */
+.sidebar_panel .sidebar{
+    padding-top: 0;
+}
+
+/* Ancho ul nav bar */
+ul.o_menu_sections {
+    margin-right: 20px !important;
+}
+
+
+/* Color del checkbox */
+i.fa.fa-fw.fa-square-o.pt-2, i.fa.fa-fw.fa-check-square.pt-2 {
+    color: #555b6d !important;
+}
+
+/* Nombres compañias */
+span.mr-3.company_label.text-muted {
+    color: #555b6d !important;
+}
+
+/* Estatus bar  */
+.o_form_view .o_form_statusbar > .o_statusbar_status > .o_arrow_button.btn-primary.disabled::after {
+    border-left-color: #cc2128 !important;
+}

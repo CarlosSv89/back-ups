@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="diario_cliente_credito_cobranza_report" model="ir.actions.report">
+            <field name="name">Diario de crédito y cobranza por cliente</field>
+            <field name="model">rep.diario.cliente.cyc</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">rep.diario.cliente.cyc.report</field>
+            <field name="report_file">Diario de crédito y cobranza por cliente</field>
+            <field name="binding_model_id" ref="model_rep_diario_cliente_cyc"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

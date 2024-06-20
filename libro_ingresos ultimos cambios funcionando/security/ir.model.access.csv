@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_libro_ingresos_libro,libro_ingresos.libro,model_libro_ingresos_libro,base.group_user,1,1,1,1
+access_libro_ingresos_linea_libro,libro_ingresos.linea_libro,model_libro_ingresos_linea_libro,base.group_user,1,1,1,1

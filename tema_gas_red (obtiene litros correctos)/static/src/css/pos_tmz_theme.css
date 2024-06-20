@@ -1,0 +1,62 @@
+/* COLOR NAVBAR */
+.pos .pos-topheader {
+    background: #cc2128 !important;
+}
+
+/*  b) The right part of the top-bar */
+
+.pos .pos-rightheader > * {
+    border-right: 1px solid #cc2128 !important;
+}
+
+/*  c) The session buttons */
+
+.pos .pos-rightheader .header-button{
+    border-right: 1px solid #cc2128 !important;
+    border-left: 1px solid #cc2128 !important;
+}
+
+.pos .pos-rightheader .header-button:last-child{
+    border-left:  1px solid #cc2128 !important;
+}
+
+/* TICKET SCREEN buttons */
+.ticket-button.highlight {
+    background: #db3338 !important;
+}
+
+.ticket-button:hover {
+    background: #b1161c !important;
+}
+.pos .product .price-tag {
+    background-color: #555555 !important;
+    border-color: #555555 !important;
+}
+.pos .login-overlay:before {
+    background: url(/web_enterprise/static/src/img/home-menu-bg-overlay.svg), linear-gradient(to right bottom,#fafafa, #ffffff) !important;
+    
+}
+/* .pos-logo {
+    -webkit-filter: drop-shadow(1px 1px 0 white)
+                    drop-shadow(-1px -1px 0 white) !important;
+    filter: drop-shadow(1px 1px 0 white) 
+            drop-shadow(-1px -1px 0 white) !important;
+} */
+.pos .popup .title, .footer {
+    background: #fafafa;
+}
+/* .pos-logo {
+    background-image: url(/gtmz/tmz_theme/static/src/img/logo.png);
+} */
+
+
+[badge]:after {
+    background: #555555;
+}
+
+.pos .pos-logo {
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 0px;
+    vertical-align: middle;
+}

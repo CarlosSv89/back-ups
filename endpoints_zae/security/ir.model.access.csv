@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_endpoints_zae_endpoints_zae,endpoints_zae.endpoints_zae,model_endpoints_zae_endpoints_zae,base.group_user,1,1,1,1

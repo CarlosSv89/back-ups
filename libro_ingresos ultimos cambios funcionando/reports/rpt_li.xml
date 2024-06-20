@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="reporte_li" model="ir.actions.report">
+            <field name="name">Reporte de libro de ingresos</field> <!--sin problemas con nombres -->
+            <field name="model">libro_ingresos.libro</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">reporte_li</field>
+            <field name="report_file">Reporte de libro de ingresos</field> <!-- Nombre del reporte -->
+            <field name="binding_model_id" ref="model_libro_ingresos_libro"/> <!--referencia del archivo de seguridad -->
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,9 @@
+<odoo>
+    <data> 
+        <record model="ir.rule" id="libro_ingresos_multicompany">
+            <field name="name">Libro de libro de ingresos multi-compañía</field>
+            <field name="model_id" ref="model_libro_ingresos_libro"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+    </data>
+</odoo>

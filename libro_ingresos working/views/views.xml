@@ -1,0 +1,74 @@
+<odoo>
+  <data>
+
+    <!-- Vista del formulario para Variables Operativas -->
+    <record model="ir.ui.view" id="libro_ingreso_form">
+      <field name="name">Libro de ingresos</field>
+      <field name="model">libro_ingresos.libro</field>
+      <field name="arch" type="xml">
+        <form string="Control">
+          <sheet>
+            <!-- Encabezado -->
+            <div class="oe_title">
+              <h1><field name="name" force_save="1" readonly="1"/></h1>
+            </div>
+
+            <!-- Grupo de campos -->
+            <group>
+                <field name="planta"/>
+                <field name="fecha_libro"/>
+                <field name="fecha_final"/>
+                <field name="saldo_inicial"/>
+                <field name="saldo_final" force_save='1' readonly='1'/>
+            </group>
+
+            <!-- Campos de línea -->
+            <field name="linea_libro_ids" force_save="1">
+              <tree delete="false" create="false" edit="false" editable="false"> <!--un tree es una tabla, los fields dentro de ellos son los apartados, el delete false es para no poder borrar registros -->
+                <!-- Campos en la tabla -->
+                <field name="fecha" force_save="1" readonly='1'/>
+                <field name="ingreso" force_save="1" readonly='1'/>
+                <field name="fecha_rda" force_save="1" readonly='1'/>
+                <field name="banco" force_save="1" readonly='1'/>
+                <field name="no_cuenta" force_save="1" readonly='1'/>
+                <field name="descripcion" force_save="1" readonly='1'/>
+                <field name="debe" force_save="1" readonly='1'/>
+                <field name="haber" force_save="1" readonly='1'/>
+                <field name="saldo" force_save="1" readonly='1'/>
+              </tree>
+            </field>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Vista de lista para Variables Operativas -->
+    <record model="ir.ui.view" id="libro_ingresos_operativo_list">
+      <field name="name">Libro de ingresos</field>
+      <field name="model">libro_ingresos.libro</field>
+      <field name="arch" type="xml">
+        <tree>
+          <!-- Campos a mostrar en la lista -->
+          <field name="name"/>
+          <field name="planta"/>
+          <field name="saldo_inicial"/>
+          <field name="saldo_final"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Acción de ventana para Variables Operativas -->
+    <record model="ir.actions.act_window" id="libro_ingresos_action_window">
+      <field name="name">Libro de ingresos</field>
+      <field name="res_model">libro_ingresos.libro</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú superior -->
+    <!-- Nombre y enlace del menú en la barra de herramientas -->
+    <menuitem name="Libro de ingresos"
+     id="libro_ingresos_menu_root"
+     action="libro_ingresos_action_window"/>
+
+  </data>
+</odoo>

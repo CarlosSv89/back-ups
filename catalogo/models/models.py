@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-# Testing new git pcsdsdsd sadasd
+# Testing gpg 2
 
 class catalogo(models.Model):
     _name = 'catalogo.variables'

@@ -25,7 +25,7 @@ class reporte(models.Model):
     enero = fields.Float('Enero', (5,1), default=0.0)
     febrero = fields.Float('Febrero', (5,1), default=0.0)
     marzo = fields.Float('Marzo', (5,1), default=0.0)
-    
+    # test
 
     relacion_ids = fields.One2many('catalogo.data', 'data_ids', string='Relacion')
 
